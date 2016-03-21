@@ -29,6 +29,10 @@ Plugin 'Lokaltog/vim-powerline.git'
 
 "Cntrlpvim
 Plugin 'ctrlpvim/ctrlp.vim'
+
+" Jedi-vim
+Plugin 'davidhalter/jedi-vim.git'
+
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
 
@@ -52,7 +56,7 @@ set bs=2     " make backspace behave like normal again
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
 " it is next to ``m`` and ``n`` which I use for navigating between tabs.
-"" let mapleader = ","
+let mapleader = ","
 
 
 " Bind nohl
