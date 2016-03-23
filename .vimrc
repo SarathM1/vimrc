@@ -33,6 +33,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Jedi-vim
 Plugin 'davidhalter/jedi-vim.git'
 
+"ft-plugin
+Plugin 'tarmack/vim-python-ftplugin'
+
+"Buf-only.vim
+Plugin 'vim-scripts/BufOnly.vim'
+
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
 
@@ -44,8 +50,8 @@ autocmd! bufwritepost .vimrc source %
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
 
-"" set pastetoggle=<F2>
-set clipboard=unnamedplus
+set pastetoggle=<F2>
+set clipboard=unnamed
 
 
 " Mouse and backspace
@@ -68,13 +74,13 @@ let mapleader = ","
 
 
 " Quicksave command
-"" noremap <C-Z> :update<CR>
-"" vnoremap <C-Z> <C-C>:update<CR>
-"" inoremap <C-Z> <C-O>:update<CR>
+noremap <C-Z> :update<CR>
+vnoremap <C-Z> <C-C>:update<CR>
+inoremap <C-Z> <C-O>:update<CR>
 
 
 " Quick quit command
-"" noremap <Leader>e :quit<CR>  " Quit current window
+noremap <Leader>e :quit<CR>  " Quit current window
 "" noremap <Leader>E :qa!<CR>   " Quit all windows
 
 
@@ -104,8 +110,8 @@ let mapleader = ","
 
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertLeave * match ExtraWhitespace /\s\+$/
+"" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+"" au InsertLeave * match ExtraWhitespace /\s\+$/
 
 
 " Color scheme
@@ -119,6 +125,7 @@ color wombat256mod
 " You need to reload this file for the change to apply
 filetype off
 filetype plugin indent on
+filetype plugin on
 syntax on
 
 
@@ -185,6 +192,7 @@ set laststatus=2
 " cd ~/.vim/bundle
 " git clone https://github.com/kien/ctrlp.vim.git
 let g:ctrlp_max_height = 30
+let g:ctrlp_show_hidden = 1
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
@@ -234,4 +242,4 @@ set wildignore+=*/coverage/*
 " Python folding
 " mkdir -p ~/.vim/ftplugin
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
-"" set nofoldenable
+"" set foldenable
