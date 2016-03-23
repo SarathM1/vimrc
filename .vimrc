@@ -98,7 +98,7 @@ noremap <Leader>e :quit<CR>  " Quit current window
 
 
 " map sort function to a key
-"" vnoremap <Leader>s :sort<CR>
+vnoremap <Leader>s :sort<CR>
 
 
 " easier moving of code blocks
