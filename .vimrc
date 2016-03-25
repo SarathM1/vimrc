@@ -36,7 +36,13 @@ Plugin 'davidhalter/jedi-vim.git'
 "Buf-only.vim
 Plugin 'vim-scripts/BufOnly.vim'
 
+"Synatastic
 Plugin 'scrooloose/syntastic'
+
+"Vim fugitive
+"Git plugin for vim
+Plugin 'tpope/vim-fugitive'
+
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
 
