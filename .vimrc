@@ -33,12 +33,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Jedi-vim
 Plugin 'davidhalter/jedi-vim.git'
 
-"ft-plugin
-Plugin 'tarmack/vim-python-ftplugin'
-
 "Buf-only.vim
 Plugin 'vim-scripts/BufOnly.vim'
 
+Plugin 'scrooloose/syntastic'
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
 
@@ -71,7 +69,6 @@ let mapleader = ","
 "" noremap <C-n> :nohl<CR>
 "" vnoremap <C-n> :nohl<CR>
 "" inoremap <C-n> :nohl<CR>
-
 
 " Quicksave command
 noremap <C-Z> :update<CR>
@@ -243,3 +240,8 @@ set wildignore+=*/coverage/*
 " mkdir -p ~/.vim/ftplugin
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 "" set foldenable
+
+"Syntastic 
+let g:syntastic_check_on_open = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_check_on_wq = 0
