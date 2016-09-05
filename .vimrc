@@ -76,10 +76,10 @@ let mapleader = ","
 "" vnoremap <C-n> :nohl<CR>
 "" inoremap <C-n> :nohl<CR>
 
-" Quicksave command
-noremap <C-Z> :update<CR>
-vnoremap <C-Z> <C-C>:update<CR>
-inoremap <C-Z> <C-O>:update<CR>
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
 
 
 " Quick quit command
@@ -96,8 +96,8 @@ noremap <Leader>e :quit<CR>  " Quit current window
 
 
 " easier moving between tabs
-"" map <Leader>n <esc>:tabprevious<CR>
-"" map <Leader>m <esc>:tabnext<CR>
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
 
 
 " map sort function to a key
@@ -107,8 +107,8 @@ vnoremap <Leader>s :sort<CR>
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
-"" vnoremap < <gv  " better indentation
-"" vnoremap > >gv  " better indentation
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
 
 
 " Show whitespace
@@ -171,13 +171,6 @@ set expandtab
 "" set nobackup
 "" set nowritebackup
 "" set noswapfile
-
-
-" Setup Pathogen to manage your plugins
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-"" call pathogen#infect()
 
 
 " ============================================================================
