@@ -1,4 +1,3 @@
-" Sample .vimrc file by Martin Brochhaus
 " Presented at PyCon APAC 2012
 
 
@@ -77,10 +76,9 @@ let mapleader = ","
 "" inoremap <C-n> :nohl<CR>
 
 " Quicksave command
-noremap <C-Z> :update<CR>
-vnoremap <C-Z> <C-C>:update<CR>
-inoremap <C-Z> <C-O>:update<CR>
-
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
 
 " Quick quit command
 noremap <Leader>e :quit<CR>  " Quit current window
@@ -160,10 +158,10 @@ set expandtab
 
 
 " Make search case insensitive
-"" set hlsearch
-"" set incsearch
-"" set ignorecase
-"" set smartcase
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 
 " Disable stupid backup and swap files - they trigger too many events
