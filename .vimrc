@@ -1,6 +1,5 @@
 " Presented at PyCon APAC 2012
 
-
 " ============================================
 " Note to myself:
 " DO NOT USE <C-z> FOR SAVING WHEN PRESENTING!
@@ -24,7 +23,13 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'Buffergator'
 
 " Vim-powerline
-Plugin 'Lokaltog/vim-powerline.git'
+" Plugin 'Lokaltog/vim-powerline.git'
+
+" Vim-airline
+" Refer  http://vi.stackexchange.com/questions/5622/how-to-configure-vim-airline-plugin-to-look-like-its-own-project-screenshot
+" for help with symbols
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 "Cntrlpvim
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -111,16 +116,19 @@ vnoremap <Leader>s :sort<CR>
 
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
-"" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-"" au InsertLeave * match ExtraWhitespace /\s\+$/
+" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+" au InsertLeave * match ExtraWhitespace /\s\+$/
 
 
 " Color scheme
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+syntax enable
 set t_Co=256
+let g:solarized_termcolors=256
 color wombat256mod
-
+" colorscheme solarized
+" set background=dark
 
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
@@ -183,10 +191,15 @@ set smartcase
 " ============================================================================
 
 
-" Settings for vim-powerline
+" Settings for vim-powerline or vim-airline
 " cd ~/.vim/bundle
 " git clone git://github.com/Lokaltog/vim-powerline.git
+" Refer  http://vi.stackexchange.com/questions/5622/how-to-configure-vim-airline-plugin-to-look-like-its-own-project-screenshot
+" for help with symbols
 set laststatus=2
+let g:airline_powerline_fonts = 1
+" let g:airline_theme='molokai'
+let g:airline_theme='bubblegum'
 
 
 " Settings for ctrlp
