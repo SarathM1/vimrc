@@ -1,6 +1,4 @@
-" Sample .vimrc file by Martin Brochhaus
 " Presented at PyCon APAC 2012
-
 
 " ============================================
 " Note to myself:
@@ -25,7 +23,13 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'Buffergator'
 
 " Vim-powerline
-Plugin 'Lokaltog/vim-powerline.git'
+" Plugin 'Lokaltog/vim-powerline.git'
+
+" Vim-airline
+" Refer  http://vi.stackexchange.com/questions/5622/how-to-configure-vim-airline-plugin-to-look-like-its-own-project-screenshot
+" for help with symbols
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 "Cntrlpvim
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -72,15 +76,14 @@ let mapleader = ","
 " Bind nohl
 " Removes highlight of your last search
 " ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
-"" noremap <C-n> :nohl<CR>
-"" vnoremap <C-n> :nohl<CR>
-"" inoremap <C-n> :nohl<CR>
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+inoremap <C-n> :nohl<CR>
 
-" Use CTRL-S for saving, also in Insert mode
-noremap <C-S> :update<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <C-O>:update<CR>
-
+" Quicksave command
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
 
 " Quick quit command
 noremap <Leader>e :quit<CR>  " Quit current window
@@ -113,16 +116,19 @@ vnoremap > >gv  " better indentation
 
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
-"" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-"" au InsertLeave * match ExtraWhitespace /\s\+$/
+" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+" au InsertLeave * match ExtraWhitespace /\s\+$/
 
 
 " Color scheme
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+syntax enable
 set t_Co=256
+let g:solarized_termcolors=256
 color wombat256mod
-
+" colorscheme solarized
+" set background=dark
 
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
@@ -160,10 +166,10 @@ set expandtab
 
 
 " Make search case insensitive
-"" set hlsearch
-"" set incsearch
-"" set ignorecase
-"" set smartcase
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 
 " Disable stupid backup and swap files - they trigger too many events
@@ -178,10 +184,15 @@ set expandtab
 " ============================================================================
 
 
-" Settings for vim-powerline
+" Settings for vim-powerline or vim-airline
 " cd ~/.vim/bundle
 " git clone git://github.com/Lokaltog/vim-powerline.git
+" Refer  http://vi.stackexchange.com/questions/5622/how-to-configure-vim-airline-plugin-to-look-like-its-own-project-screenshot
+" for help with symbols
 set laststatus=2
+let g:airline_powerline_fonts = 1
+" let g:airline_theme='molokai'
+let g:airline_theme='bubblegum'
 
 
 " Settings for ctrlp
@@ -240,6 +251,9 @@ set completeopt-=preview
 " mkdir -p ~/.vim/ftplugin
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 "" set foldenable
+
+" NERDtree
+nmap <leader>ne :NERDTreeToggle<cr>
 
 "Syntastic 
 let g:syntastic_check_on_open = 1
