@@ -26,7 +26,8 @@ Plugin 'Buffergator'
 " Plugin 'Lokaltog/vim-powerline.git'
 
 " Vim-airline
-" Refer  http://vi.stackexchange.com/questions/5622/how-to-configure-vim-airline-plugin-to-look-like-its-own-project-screenshot
+" Refer
+" http://vi.stackexchange.com/questions/5622/how-to-configure-vim-airline-plugin-to-look-like-its-own-project-scrpablo
 " for help with symbols
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -124,11 +125,12 @@ vnoremap > >gv  " better indentation
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 syntax enable
+set term=screen-256color
 set t_Co=256
 let g:solarized_termcolors=256
 color wombat256mod
-" colorscheme solarized
-" set background=dark
+"colorscheme pablo
+set background=dark
 
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
