@@ -36,7 +36,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Jedi-vim
-Plugin 'davidhalter/jedi-vim.git'
+" Plugin 'davidhalter/jedi-vim.git'
 
 "Buf-only.vim
 Plugin 'vim-scripts/BufOnly.vim'
@@ -47,6 +47,9 @@ Plugin 'scrooloose/syntastic'
 "Vim fugitive
 "Git plugin for vim
 Plugin 'tpope/vim-fugitive'
+
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
 
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
@@ -193,6 +196,7 @@ set smartcase
 " for help with symbols
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
 " let g:airline_theme='molokai'
 let g:airline_theme='bubblegum'
 
