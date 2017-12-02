@@ -21,7 +21,8 @@ Plugin 'Buffergator'
 " Plugin 'Lokaltog/vim-powerline.git'
 
 " Vim-airline
-" Refer  http://vi.stackexchange.com/questions/5622/how-to-configure-vim-airline-plugin-to-look-like-its-own-project-screenshot
+" Refer
+" http://vi.stackexchange.com/questions/5622/how-to-configure-vim-airline-plugin-to-look-like-its-own-project-scrpablo
 " for help with symbols
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -30,7 +31,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Jedi-vim
-Plugin 'davidhalter/jedi-vim.git'
+" Plugin 'davidhalter/jedi-vim.git'
 
 "Buf-only.vim
 Plugin 'vim-scripts/BufOnly.vim'
@@ -41,6 +42,9 @@ Plugin 'scrooloose/syntastic'
 "Vim fugitive
 "Git plugin for vim
 Plugin 'tpope/vim-fugitive'
+
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
 
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
@@ -94,8 +98,8 @@ noremap <Leader>e :quit<CR>  " Quit current window
 
 
 " easier moving between tabs
-"" map <Leader>n <esc>:tabprevious<CR>
-"" map <Leader>m <esc>:tabnext<CR>
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
 
 
 " map sort function to a key
@@ -105,8 +109,8 @@ vnoremap <Leader>s :sort<CR>
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
-"" vnoremap < <gv  " better indentation
-"" vnoremap > >gv  " better indentation
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
 
 
 " Show whitespace
@@ -119,11 +123,12 @@ vnoremap <Leader>s :sort<CR>
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 syntax enable
+set term=screen-256color
 set t_Co=256
 let g:solarized_termcolors=256
 color wombat256mod
-" colorscheme solarized
-" set background=dark
+"colorscheme pablo
+set background=dark
 
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
@@ -174,13 +179,6 @@ set smartcase
 "" set noswapfile
 
 
-" Setup Pathogen to manage your plugins
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-"" call pathogen#infect()
-
-
 " ============================================================================
 " Python IDE Setup
 " ============================================================================
@@ -193,6 +191,7 @@ set smartcase
 " for help with symbols
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
 " let g:airline_theme='molokai'
 let g:airline_theme='bubblegum'
 
