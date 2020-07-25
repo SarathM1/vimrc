@@ -19,6 +19,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/syntastic'
+Plug 'davidhalter/jedi-vim'
 " Plug 'sbdchd/neoformat'
 
 " Initialize plugin system.
@@ -146,9 +147,9 @@ let g:table_mode_corner="|"
 " let g:python_host_prog = '/usr/local/bin/python2'
 " let g:python3_host_prog = '/usr/bin/python3'
 " " let $NVIM_PYTHON_LOG_FILE='nvim-python.log'
-" let g:jedi#auto_vim_configuration = 0
-" let g:jedi#documentation_command = "<leader>k"
-
+let g:jedi#auto_vim_configuration = 0
+" To disable docstring popup
+autocmd FileType python setlocal completeopt-=preview
 " }}}
 
 
@@ -375,3 +376,5 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=C0116,C0115'
