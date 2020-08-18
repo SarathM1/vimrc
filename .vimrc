@@ -28,7 +28,11 @@ call plug#end()
 " Neovim Settings
 set termguicolors
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-set clipboard+=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
 set pastetoggle=<f2>
 set nopaste
 
